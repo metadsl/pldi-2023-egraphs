@@ -1,0 +1,337 @@
+
+%%
+%% This is file `sample-sigplan.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `sigplan')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigplan.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigplan,screen,review]{acmart}
+
+\usepackage{dirtytalk}
+\usepackage{hyperref}
+\usepackage{cprotect}
+\usepackage{listings}
+\usepackage{fancyvrb}
+
+
+%% NOTE that a single column version is required for 
+%% submission and peer review. This can be done by changing
+%% the \doucmentclass[...]{acmart} in this template to 
+%% \documentclass[manuscript,screen,review]{acmart}
+%% 
+%% To ensure 100% compatibility, please check the white list of
+%% approved LaTeX packages to be used with the Master Article Template at
+%% https://www.acm.org/publications/taps/whitelist-of-latex-packages 
+%% before creating your document. The white list page provides 
+%% information on how to submit additional LaTeX packages for 
+%% review and adoption.
+%% Fonts used in the template cannot be substituted; margin 
+%% adjustments are not allowed.
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{none}
+% \copyrightyear{2018}
+\acmYear{2023}
+\acmDOI{}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+\acmConference{PLDI'23 - EGRAPHS workshop}{June 16--21,
+  2023}{Orlando, FL}
+%
+%  Uncomment \acmBooktitle if th title of the proceedings is different
+%  from ``Proceedings of ...''!
+%
+%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%  June 03--05, 2018, Woodstock, NY} 
+\acmPrice{}
+\acmISBN{}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+\VerbatimFootnotes
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Egg-smol Python: A Pythonic Library for E-graphs}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Saul Shanabrook}
+\email{s.shanabrook@gmail.com}
+\orcid{0000-0002-0258-4236}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+% \renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+E-graphs have become an essential data structure in a variety of domains, including programming languages, compilers, and deep learning compute graphs. In this talk, we present our work on developing Python bindings for the egg-smol library, which aims to provide a more user-friendly and Pythonic way to interact with e-graphs. We demonstrate how leveraging Python's static typing can lead to an improved editing experience
+% compared to what?
+and discuss potential applications in the open-source Python data science ecosystem.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+% \begin{CCSXML}
+% <ccs2012>
+%  <concept>
+%   <concept_id>10010520.10010553.10010562</concept_id>
+%   <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%   <concept_significance>500</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010575.10010755</concept_id>
+%   <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%   <concept_significance>300</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010553.10010554</concept_id>
+%   <concept_desc>Computer systems organization~Robotics</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10003033.10003083.10003095</concept_id>
+%   <concept_desc>Networks~Network reliability</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+% </ccs2012>
+% \end{CCSXML}
+
+% \ccsdesc[500]{Computer systems organization~Embedded systems}
+% \ccsdesc[300]{Computer systems organization~Redundancy}
+% \ccsdesc{Computer systems organization~Robotics}
+% \ccsdesc[100]{Networks~Network reliability}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+% \keywords{datasets, neural networks, gaze detection, text tagging}
+
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+% \begin{teaserfigure}
+%   \includegraphics[width=\textwidth]{sampleteaser}
+%   \caption{Seattle Mariners at Spring Training, 2010.}
+%   \Description{Enjoying the baseball game from the third-base
+%   seats. Ichiro Suzuki preparing to bat.}
+%   \label{fig:teaser}
+% \end{teaserfigure}
+
+% \received{20 February 2007}
+% \received[revised]{12 March 2009}
+% \received[accepted]{5 June 2009}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+E-graphs have recently gained popularity as a versatile data structure, with applications in synthesis, optimization, and verification via equality saturation and related techniques. The growing number of open-source e-graph implementations makes it increasingly feasible to build developer-facing tools with this technology. In recent years, Python has become the go-to language for scientific computing and machine learning, thanks to its extensive ecosystem of libraries and tools. Therefore, integrating e-graph techniques with the Python ecosystem can provide significant value to developers and researchers working in these fields.
+
+
+In this work, we explore how e-graph expressions and rules can be authored in Python, by using the \verb|egg-smol| library, and how this can serve the scientific ecosystem in Python. \verb|egg-smol| is an e-graph library in Rust which is exposed primarily through a text interface. It is an evolution from the egg rust library \cite{Willsey2020eggFA} to support relational e-matching \cite{zhang2022relational} \footnote{\say{We have determined the relational e-matching is somewhat of a poor match for egg as it's currently structured for a couple reasons. (1) Most workloads that egg users encounter focus on small, simple patterns, so relational e-matching is no better and sometimes slower because you have to build the database "from scratch" every iteration. (2) egg gives the user a little too much flexibility in manipulating e-nodes (in particular, you the e-node list in each e-class is exposed); this makes it hard to incrementally maintain the datastructures you'd need for relational e-matching. egg-smol (name temporary) is a clean slate approach to this and some other shortcomings of egg. No promises on its stabilization or merging into egg yet.} Max Willsey \cite{zulip}}. One of the main differences over the egg library is that instead of allowing users to bring their own data structures for nodes and rules, it provides simple struct and enum classes to describe all of the structures. This is how it can be exposed primarily through a lisp-like text language. 
+
+
+\section{egg-smol Python}
+
+We have exposed the egg-smol API successfully in Python, assisted by the PyO3 Rust library \cite{pyO3} \footnote{The library is installable with \verb+pip install egg-smol+, with source available at \url{https://github.com/metadsl/egg-smol-python}}. The limited surface area of the API makes it simpler to translate than the original egg library, since all of the interfaces are purely data in, data out, and don't rely on any shared references between Python and Rust, besides the actual e-graph itself.
+
+
+ \begin{figure}
+   % \centering
+   % \includegraphics{voltage}
+   % \Description{A bell-like histogram centered at $0.5$ ̃V with most
+   % measurements between $0.2$ ̃V and $0.8$ ̃V}
+   \caption{High-Level Python API}
+   \lstinputlisting[language=Python, firstline=12, basicstyle=\ttfamily\scriptsize]{eqsat_basic.py}
+   \label{fig:high-level}
+\end{figure}
+
+
+
+
+\begin{figure}
+   % \centering
+   % \includegraphics{voltage}
+   % measurements between $0.2$ ̃V and $0.8$ ̃V}
+   \caption{Text API}
+   \lstinputlisting[language=Lisp, basicstyle=\ttfamily\scriptsize]{eqsat-basic.egg}
+   \label{fig:egg-smol}
+\end{figure}
+
+
+
+The first API we created were direct bindings of the Rust library, exposed through the \cprotect{\href{https://egg-smol-python.readthedocs.io/en/latest/reference/bindings.html}}{\verb|egg_smol.bindings| module}. These support the full breadth of the text-based language but are not particularly succinct in Python or readable. On top of these low-level bindings is a high-level interface that seeks to map closer to Python idioms, which is exposed at the top level \verb|egg_smol| module. See Figure \ref{fig:high-level} for a Python example and Figure \ref{fig:egg-smol} for the equivalent text version from \verb|egg-smol|.
+
+\subsection{Familiar Python Constructs}
+One of the key benefits of using native Python constructs to describe the shape of \verb|egg-smol| expressions is the familiarity and ease of use for Python developers. By leveraging Python classes, functions, and methods, developers can work with e-graphs in a way that feels consistent with the rest of the Python ecosystem. This makes it easier for Python users to reason about e-graph expressions and rules, leading to a more intuitive and productive experience.
+
+Native Python constructs also enable the creation of a more user-friendly domain-specific language (DSL) for e-graphs. By supporting attribute overloading, Python allows developers to redefine the behavior of built-in operators such as \verb|+|. This feature can be utilized to create more expressive and readable e-graph expressions that closely resemble the mathematical notation commonly used in the scientific community.
+
+For example, consider the creation of an e-graph expression representing the addition of two variables a and b. By using native Python constructs and attribute overloading, we can define a custom Add class that overloads the \verb|__add__| method. This allows us to write an expression like \verb|a + b|, which is both easier to read and more closely resembles the mathematical notation. The use of native Python constructs in this way promotes the readability and maintainability of e-graph code.
+
+\subsection{Builtin Python Tooling}
+
+One of the major advantages of using \verb|egg-smol| with native Python constructs is the seamless integration with existing Python tooling, such as MyPy and other static type checkers. These tools can reason about the code innately, without the need for any additional plugins. This provides free static in-editor verification that the types of all functions are correct, improving code quality and reducing the likelihood of runtime errors.
+
+For example, consider the code snippet provided above. In this case, you cannot pass an \verb|int| to the \verb|Var| function, like \verb|Num.var(10)|. If you attempt to do so, MyPy will raise an error, preventing the incorrect usage from going unnoticed. This static type checking is particularly valuable when working with complex e-graph expressions and rules, as it helps to ensure their correctness.
+
+The integration with Python's generic typing system further enhances the capabilities of static type checkers like MyPy. For instance, we can use generic typing to represent the requirement that certain operations, such as \verb|!=|, must take two arguments of the same type. This allows tools like MyPy to prevent incorrect usage of these operations, catching potential issues early in the development process.
+
+Moreover, the built-in tooling support extends to verifying the correctness of rewrite rules. This ensures that both the source and destination expressions in a rewrite rule have the same types, further enhancing the reliability and maintainability of the e-graph code.
+
+In addition to helping verify the correctness of e-graph expressions, native Python constructs also enable seamless integration with code editor auto-completion features. These tools can further improve the productivity and ease of use for developers working with e-graphs in Python.
+
+\subsection{Operator Polymorphism}
+
+A key difference between writing functions in Python and in the built-in \verb|egg-smol| text language (see Figure \ref{fig:egg-smol}) is that in Python, functions are often represented as methods. This distinction offers a significant advantage: when the same method is defined for two classes, such as \verb|__add__|, the same \verb|+| operator can be used to call both of them. However, the specific method being called is determined by tracking the types at runtime.
+
+This approach enables support for operator overloading at the Python level while still allowing the Rust level to translate these into separate functions with distinct type signatures and rewrite rules. By exploiting Python's dynamic typing and method dispatch, we can create a more expressive and convenient interface for working with e-graphs. This design choice not only simplifies the implementation of complex e-graph expressions and rules but also improves code readability and maintainability, making it more accessible to a wider range of users.
+
+
+\section{Scientific Python Ecosystem}
+The Python ecosystem boasts a plethora of popular open-source scientific tools, such as Dask, Ibis, NumPy, Pandas, and many others, catering to various domains including machine learning, data science, and scientific computing. These tools have garnered widespread adoption and have become indispensable for many researchers and practitioners.
+
+An active area of exploration within this ecosystem is finding ways to provide users access to different tools without the need to rewrite their code. For instance, seamlessly using GPUs in Scikit-learn through CuPy or employing Ibis to write Pandas-like code and compile it to SQL. The open question that arises is whether a library can facilitate the creation of interfaces to these diverse domains and enable the development of replacements between them.
+
+A term rewriting system, as provided by e-graphs, could offer a solution by allowing open APIs and supporting transformations between different APIs outside the source of those libraries. This approach facilitates smoother integration and interoperability between various tools and fosters greater extensibility and flexibility.
+
+By enabling users to define new operations based on existing ones without modifying the core library, e-graphs can promote innovation and allow greater creativity in exploring various targets without requiring users to change their code. Fundamentally, this could accelerate innovation, as optimizations would not have to wait for adoption from core libraries (such as NumPy, SciPy, and Pandas), which tend to be slow to move and try out new ideas. Furthermore, it could support a larger community-driven approach, which would be more resilient to capture from industry players while still fostering innovation. Currently, innovation often occurs in end-to-end systems like TensorFlow, which can be highly optimized but lack interoperability with other major libraries.
+
+While this goal is still a long way off, it could significantly improve the user experience. Instead of having to choose between using, for example, Dask DataFrames or Ibis DataFrames, users could opt for whichever API maps more closely to their domain and write rewrites to the backend they prefer. If their backend preference changes, they would not have to rewrite their business logic; they would only need to write different rewrites, offering a more agile and adaptable approach to utilizing various tools within the scientific Python ecosystem.
+
+\subsection{Exposing Expressions to Users}
+
+Many Python libraries already incorporate an internal expression system with optimizations between them. However, one of the main roadblocks to making this general-purpose and cross-library is the differentiation between the nodes in the internal system and the interface exposed to the user. For example, Ibis has a \verb|Power| node, which represents exponentiation as a binary operation. This node is constructed in the \verb|__pow__| method of a user-facing class, allowing users to perform operations like \verb|a ** b|. This separation between the node definition and its invocation not only adds a layer of complexity but also makes it challenging for third-party libraries to write their own nodes and expose them, as this API is typically private.
+
+The high-level API developed in the \verb|egg-smol| bindings takes a different approach by using the actual method declaration as the description of the node itself. This unification of the user-facing and developer-facing layers allows for the exposure of these expressions as a public API, making it viable for users or third-party libraries to define their own replacements or operations. This approach simplifies the integration process and encourages the development of more versatile tools that can seamlessly interact with different libraries.
+
+By adopting this unified design, users and third-party libraries can more easily extend the functionality of existing systems and contribute to the overall ecosystem. This streamlined approach fosters collaboration and innovation while reducing the complexities associated with traditional library designs that separate user-facing and developer-facing layers. Consequently, the \verb|egg-smol| bindings provide a more intuitive and accessible means for users to work with expressions and transformations within the scientific Python ecosystem.
+
+\section{Next Steps}
+
+As we have demonstrated the potential of the \verb|egg-smol| bindings for the Python scientific ecosystem, several next steps can be taken to further improve the integration and adoption of this approach:
+
+\begin{enumerate}
+\item \textbf{Expand the high-level API}: Continue refining and expanding the high-level API to cover more use cases and accommodate a wider range of expressions and rewrite rules. This will encourage developers to adopt this approach and facilitate the creation of more interoperable tools within the Python ecosystem.
+
+\item \textbf{Collaborate with existing libraries}: Engage with the maintainers and contributors of popular scientific libraries (such as Dask, Ibis, NumPy, and Pandas) to identify opportunities for integration with the \verb|egg-smol| bindings. This collaboration will enable seamless interoperability between these libraries and foster innovation across the ecosystem.
+
+\item \textbf{Develop comprehensive documentation and examples}: Provide extensive documentation, tutorials, and examples that showcase the benefits of using the \verb|egg-smol| bindings in various scenarios. This will help users and developers understand the potential of this approach and how it can be applied to their specific problems.
+\end{enumerate}
+
+By addressing these next steps, the \verb|egg-smol| bindings can pave the way for a more versatile and interoperable scientific Python ecosystem, ultimately enabling users to more easily leverage the power of e-graphs and term rewriting systems in their research and applications.
+
+
+
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+Thank you to the Recurse Center for providing the community and support to do this work. None of this would be possible without all of the work on the underlying Rust libraries, by Max Willsey and others. Thank you for fielding my questions about egg-smol and be open to collaboration on it, even at such a young stage.
+
+\end{acks}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-base}
+
+%%
+%% If your work has an appendix, this is the place to put it.
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-sigplan.tex'.
